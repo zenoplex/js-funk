@@ -2,16 +2,21 @@
   "name": "@gen/js-funk",
   "version": "0.0.0",
   "description": "Inspired by jsfuck by Martin Kleppe and Francis Stokes",
-  "main": "index.js",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es5.js",
+  "browser": "lib/index.iife.js",
+  "typings": "lib/types/index.d.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "eslint ./src/*.*",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "build": "babel src --out-dir lib --extensions \".ts,.tsx\""
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly"
   },
   "keywords": [
-    "jsfuck",
+    "jsfunk",
     "jest"
   ],
   "files": [
@@ -34,6 +39,9 @@
     "eslint-plugin-prettier": "3.1.2",
     "jest": "25.2.7",
     "prettier": "2.0.4",
+    "rollup": "2.4.0",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-terser": "5.3.0",
     "typescript": "3.8.3"
   }
 }
