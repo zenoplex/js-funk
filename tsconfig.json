@@ -13,6 +13,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "declarationDir": "lib/types",
+    "declaration": true,
   }
 }
