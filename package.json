@@ -1,17 +1,21 @@
 {
   "name": "@gen/js-funk",
   "version": "0.0.0",
-  "description": "Inspired by jsfuck @aemkei",
+  "description": "Inspired by jsfuck by Martin Kleppe and Francis Stokes",
   "main": "index.js",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "eslint ./src/*.*",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "build": "babel src --out-dir lib --extensions \".ts,.tsx\""
   },
   "keywords": [
     "jsfuck",
     "jest"
+  ],
+  "files": [
+    "lib"
   ],
   "author": "Gen Ichino <zenoplex@gmail.com>",
   "license": "MIT",
@@ -21,6 +25,7 @@
     "@babel/preset-env": "7.9.5",
     "@babel/preset-typescript": "7.9.0",
     "@types/jest": "25.2.1",
+    "@types/node": "13.11.1",
     "@typescript-eslint/eslint-plugin": "2.27.0",
     "@typescript-eslint/parser": "2.27.0",
     "eslint": "6.8.0",
